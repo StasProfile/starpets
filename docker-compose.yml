@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: starpets_postgres
+    environment:
+      POSTGRES_DB: starpets
+      POSTGRES_USER: starpets_user
+      POSTGRES_PASSWORD: starpets_password
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U starpets_user -d starpets']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    command: ['postgres', '-c', 'max_connections=400']
+
+volumes:
+  postgres_data:

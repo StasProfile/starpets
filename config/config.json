@@ -1,0 +1,47 @@
+{
+  "development": {
+    "username": "starpets_user",
+    "password": "starpets_password",
+    "database": "starpets",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres",
+    "pool": {
+      "max": 200,
+      "min": 30,
+      "acquire": 60000,
+      "idle": 10000,
+      "evict": 1000
+    }
+  },
+  "test": {
+    "username": "starpets_user",
+    "password": "starpets_password",
+    "database": "starpets_test",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres",
+    "pool": {
+      "max": 200,
+      "min": 30,
+      "acquire": 60000,
+      "idle": 10000,
+      "evict": 1000
+    }
+  },
+  "production": {
+    "username": "${DB_USER}",
+    "password": "${DB_PASSWORD}",
+    "database": "${DB_NAME}",
+    "host": "${DB_HOST}",
+    "port": "${DB_PORT}",
+    "dialect": "postgres",
+    "pool": {
+      "max": 200,
+      "min": 30,
+      "acquire": 60000,
+      "idle": 10000,
+      "evict": 1000
+    }
+  }
+}
